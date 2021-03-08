@@ -6,6 +6,8 @@ const homeConroller = require('../controllers/home-controllers');
 
 router.get('/',homeConroller.home);
 
+router.use('/users/', require('./users.js'));
+
 
 
 module.exports = router ;
