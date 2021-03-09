@@ -2,9 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 
-const homeConroller = require('../controllers/home-controllers');
+const homeController = require('../controllers/home-controllers');
 
-router.get('/',homeConroller.home);
+router.get('/',homeController.home);
+
+
 
 router.use('/users/', require('./users.js'));
 
