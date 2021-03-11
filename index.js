@@ -23,6 +23,10 @@ const passport = require('passport');
 
 const passportLocal = require('./config/passport-local-strategy.js');
 
+// const MongoStore  = require('connect-mongo')(session);
+
+
+
 app.use(expressLayouts);
 
 app.set('layout extractStyles', true);
@@ -48,7 +52,20 @@ app.use(session({
     resave : false ,
     cookie : {
         maxAge : (1000 * 60 * 100)
-    }
+    },
+
+    // store : new MongoStore(
+    //     {
+    //          mongooseConnection : db,
+    //         // mongooseConnection: mongoose.connection,
+    //         autoRemove : 'disabled'
+    //     },
+
+    //     function(err)
+    //     {
+    //         console.log(err || 'connect-mongodb set up ok');
+    //     }
+    // )
 
 }));
 
