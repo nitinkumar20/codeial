@@ -1,14 +1,9 @@
-<h1> Codeial sign in page  </h1>
+<h1>Sign In</h1>
 
+<form action="/users/create-session" method="POST">
 
-
-<form action="/users/create-session/" method="POST"> 
-
-    
-    <input type="email" name ="email " placeholder="Your Email" required></input>
-
-    <input type="password" name ="password" placeholder="Password" required></input>
-
-     <input type="submit"> </input>
+    <input type="email" name="email" placeholder="Email"  required >
+    <input type="password" name="password" placeholder="Password"  required >
+    <input type="submit" value="Sign In">
 
 </form>
