@@ -1,6 +1,6 @@
-body{
-    margin : 0px;
-
-    text-align: center;
-
-}
+body {
+  margin: 0px;
+  background-color: antiquewhite;
+  text-align: center; }
+  body #body-main {
+    background-color: red; }

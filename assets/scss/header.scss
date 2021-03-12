@@ -1,0 +1,48 @@
+header
+{
+    background-color: rgb(7, 7, 248);
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+   
+
+   >  h2{
+        // text-transform: uppercase;
+        // font-weight: 800;
+        padding-left: 10px;
+        padding-top: 13px;
+        color: white;
+    }
+
+
+     ul{
+
+        display: flex;
+        // padding-left: 7px;
+        justify-content: space-between;
+        // padding-right: 10px;
+        width: 16%;
+
+        
+    li{
+       
+
+     h3   a{
+          text-decoration: none;
+          color :white ;  
+          padding-right: 15px;
+        }
+    }
+
+
+
+     }
+
+     #sign-in-id
+     {
+         margin-left: 60px;
+     }
+
+
+
+}

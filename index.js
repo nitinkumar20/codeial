@@ -6,6 +6,19 @@ const app = express();
 
 const port = 8000;
 
+const sassMiddleware = require('node-sass-middleware');
+
+app.use(sassMiddleware(
+    {
+       src : './assets/scss' ,
+       dest : './assets/CSS' ,
+       debug : true ,
+       outputStyle : "extended",
+       prefix : '/CSS' 
+    }
+
+    ));
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
@@ -24,6 +37,8 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy.js');
 
 // const MongoStore  = require('connect-mongo')(session);
+
+var mongoose = require('mongoose');
 
 
 
@@ -57,7 +72,6 @@ app.use(session({
     // store : new MongoStore(
     //     {
     //          mongooseConnection : db,
-    //         // mongooseConnection: mongoose.connection,
     //         autoRemove : 'disabled'
     //     },
 

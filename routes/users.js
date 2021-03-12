@@ -12,6 +12,8 @@ router.get('/sign-up/', userController.signup);
 
 router.get('/sign-in/',userController.signin);
 
+router.get('/sign-out/',userController.destroySession);
+
 router.post('/create/', userController.create);
 
 router.post('/create-session/', passport.authenticate(

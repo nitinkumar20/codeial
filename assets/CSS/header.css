@@ -1,0 +1,19 @@
+header {
+  background-color: #0707f8;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh; }
+  header > h2 {
+    padding-left: 10px;
+    padding-top: 13px;
+    color: white; }
+  header ul {
+    display: flex;
+    justify-content: space-between;
+    width: 16%; }
+    header ul li h3 a {
+      text-decoration: none;
+      color: white;
+      padding-right: 15px; }
+  header #sign-in-id {
+    margin-left: 60px; }
