@@ -1,4 +1,4 @@
-
+const Post = require('../models/post');
 
 module.exports.home = function(req, res){
 
@@ -8,7 +8,25 @@ module.exports.home = function(req, res){
 
     // res.cookie('user-id', 20);
 
-    return res.render('home.ejs', {title : "Home"});
+    // Post.find({} , function(err , posts){
+    //     return res.render('home' , {
+    //        title : 'Codeial | Home ' ,
+    //        posts : posts 
+    //     }); 
+    // });
+
+    //populating the user of posts
+
+    Post.find({}).populate('user').exec(function(err , posts){
+     
+           return res.render('home' , {
+           title : 'Codeial | Home ' ,
+           posts : posts 
+        } ); 
+
+
+    } );
+
 
 };
 
