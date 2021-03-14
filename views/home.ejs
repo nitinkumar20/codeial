@@ -1,11 +1,10 @@
-
+<link rel="stylesheet" href="/CSS/home.css">
     
-
-<h1> Codeial / <%= title %> </h1>
+<div id ="home-page">
 
 <section id ="feed-post" >
 
-    <h4>Posts</h4>
+    <h2>Posts</h42>
 
    <% if(locals.user)  {%>
 <form action ="/posts/create/" id="new-post-form" method="POST" > 
@@ -34,12 +33,21 @@
 
 <section id="user-friends">
 
-  <h4>Friends</h4>
+  <h2>Friends</h2>
   <% for(u of all_users) {%>
 
    <p>
-     <a href="/users/profile/<%= u.id%>"><%=u.name %></a>
+     
+     <a href="/users/profile/<%= u.id%>"> 
+      
+      <h3><%=u.name %> </h3> 
+    
+    </a>
+
    </p>
 
   <%} %>
 </section>
+
+
+</div>

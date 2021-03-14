@@ -1,0 +1,12 @@
+#home-page {
+  display: flex; }
+  #home-page #feed-post {
+    width: 90%;
+    padding: 10px; }
+  #home-page #user-friends {
+    width: 9%;
+    padding: 10px;
+    border-left: 1px solid #636161; }
+  #home-page a {
+    text-decoration: none;
+    color: white; }
