@@ -2,7 +2,32 @@ const User = require('../models/user.js');
 
 module.exports.profile = function(req , res )
 {
-    return res.render('user_profile.ejs', {title : "User"});
+    User.findById(req.params.id , function(err ,user){
+     
+        return res.render('user_profile.ejs', {
+            
+            title : "User" ,
+            profile_user : user
+        
+        });
+    });
+    
+
+};
+
+
+module.exports.update = function(req, res){
+
+  if(req.user.id == req.params.id)
+  {
+      User.findByIdAndUpdate(req.user.id , req.body , function(err , user){
+          return res.redirect('back');
+      });
+  }
+  else
+  {
+      return res.status(401).send('Unautherised');
+  }
 
 };
 
@@ -21,13 +46,13 @@ module.exports.signup = function(req, res){
 
 module.exports.signin = function(req, res){
 
-
+     
     if(req.isAuthenticated()){
-        return  res.redirect('/users/profile');
+        return res.redirect('/users/profile');
      }
     // return res.end('<h1>Express is up for codeial </h1>');
 
-   return res.render('user_sign_in.ejs', {title : "Sign In "});
+    return res.render('user_sign_in.ejs', {title : "Sign In "});
 
 };
 
@@ -79,7 +104,7 @@ module.exports.create = function(req, res){
 };
 
 module.exports.createSession  = function(req, res ){
-   return res.redirect('/users/profile');
+   return res.redirect('/');
 };
 
 
