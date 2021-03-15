@@ -8,6 +8,10 @@ const port = 8000;
 
 const sassMiddleware = require('node-sass-middleware');
 
+const flash = require('connect-flash');
+
+const flashMware = require('./config/middleware');
+
 app.use(sassMiddleware(
     {
        src : './assets/scss' ,
@@ -88,6 +92,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+app.use(flash());
+
+app.use(flashMware.setFlash);
 
 app.use('/', require('./routes'));
 
