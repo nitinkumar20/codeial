@@ -21,11 +21,13 @@ module.exports.update = function(req, res){
   if(req.user.id == req.params.id)
   {
       User.findByIdAndUpdate(req.user.id , req.body , function(err , user){
+          req.flash('success', 'Updated!');
           return res.redirect('back');
       });
   }
   else
-  {
+  {   
+      req.flash('error', 'Unauthorized!');
       return res.status(401).send('Unautherised');
   }
 
@@ -62,6 +64,7 @@ module.exports.create = function(req, res){
         //   console.log(req.body);
         if(req.body.password != req.body.confirm_password)
        {
+           req.flash('error', 'Passwords do not match');
            return res.redirect('back');
        }
 
@@ -71,8 +74,8 @@ module.exports.create = function(req, res){
 
         if(err)
         {
-            console.log("Error in finding the user", err);
-            return ;
+            req.flash('error', err); 
+            return res.redirect('back');
         }
     
     
@@ -84,11 +87,11 @@ module.exports.create = function(req, res){
               
         if(err)
         {
-            console.log("Error in creating  the user", err);
-            return ;
+            req.flash('error', err); 
+            return res.redirect('back');
         }
     
-    
+        req.flash('success', 'You have signed up, login to continue!');
         return res.redirect('/users/sign-in');
     
             });
@@ -96,7 +99,9 @@ module.exports.create = function(req, res){
     
         else
         {
-          return res.redirect('back');
+          
+            req.flash('success', 'You have already signed up, login to continue!');
+            return res.redirect('/users/sign-in');
         }
     
     }));
