@@ -20,7 +20,7 @@ module.exports.create = async function(req, res)
                     post: post
                 },
                 message: "Post created!"
-            });
+             });
         }
 
 

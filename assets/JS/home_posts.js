@@ -19,13 +19,13 @@
                    new PostComments(data.data.post._id);
 
                    new Noty({
-                       theme: 'relax',
-                       text: "Post published!",
-                       type: 'success',
-                       layout: 'topRight',
-                       timeout: 1500
-                       
-                    }).show();
+                    theme: 'relax',
+                    text: "Post Published !",
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                    
+                }).show();
 
                }, error: function(error){
                    console.log(error.responseText);
