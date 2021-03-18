@@ -3,15 +3,16 @@
     display: flex ;
 
     #feed-post{
-        width: 90%;
+        width: 85%;
         padding: 10px;
     }
 
     #user-friends
     {
-        width: 9%;
+        width: 14%;
         padding: 10px;
         border-left: 1px solid rgb(99, 97, 97);
+        background-color: lightcoral;
     }
 
      a {
