@@ -51,7 +51,7 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-
+app.use('/uploads' , express.static(__dirname + '/uploads'));
 //use express router
 app.use(express.static('./assets'));
 
