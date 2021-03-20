@@ -42,6 +42,7 @@ module.exports.update = async function(req, res){
 
                     if(user.avatar)
                     {
+                        if(fs.existsSync(path.join(__dirname,"..",user.avatar)))
                         fs.unlinkSync(path.join(__dirname , '..' , user.avatar));
                     }
                     user.avatar = User.avatarPath + '/' + req.file.filename ;
