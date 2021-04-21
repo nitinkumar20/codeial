@@ -1,5 +1,6 @@
 #home-page {
-  display: flex; }
+  display: flex;
+  background-color: aqua; }
   #home-page #feed-post {
     width: 85%;
     padding: 10px; }
@@ -7,7 +8,7 @@
     width: 14%;
     padding: 10px;
     border-left: 1px solid #636161;
-    background-color: lightcoral; }
+    background-color: pink; }
   #home-page a {
     text-decoration: none;
     color: white; }
