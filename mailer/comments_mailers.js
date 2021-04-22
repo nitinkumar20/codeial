@@ -9,7 +9,7 @@ let htmlString = nodeMailer.renderTemplate({comment : comment }, '/comments/new_
 
 
     nodeMailer.transporter.sendMail({
-        from : 'codeial.com' ,
+        from : 'nitin.20178036@mnnit.ac.in' ,
         to : comment.user.email ,
         subject : 'New comment added' ,
         html : htmlString
