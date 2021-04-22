@@ -4,13 +4,15 @@ const nodeMailer = require('../config/nodemailer');
 
 
 exports.newComment = (comment) =>{
-  console.log('Inside new comment mailer');
+//   console.log('Inside new comment mailer');
+let htmlString = nodeMailer.renderTemplate({comment : comment }, '/comments/new_comment.ejs');
+
 
     nodeMailer.transporter.sendMail({
         from : 'codeial.com' ,
         to : comment.user.email ,
         subject : 'New comment added' ,
-        html : '<h1>Hey ! new comment published </h1>'
+        html : htmlString
     } , (err , info) =>{
         if(err){
            console.log('error in sending mail', err);
