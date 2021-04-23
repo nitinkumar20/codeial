@@ -14,12 +14,13 @@ let htmlString = nodeMailer.renderTemplate({comment : comment }, '/comments/new_
         subject : 'New comment added' ,
         html : htmlString
     } , (err , info) =>{
+        
         if(err){
            console.log('error in sending mail', err);
            return ;
         }
 
-        console.log('Message sent', info);
+        // console.log('Message sent', info);
         return ;
     });
     
