@@ -2,6 +2,8 @@ const Comment = require('../models/comments');
 
 const commentsMailer = require('../mailer/comments_mailers');
 
+const Like = require('../models/like');
+
 const Post = require('../models/post');
 
 const commentEmailWorker = require('../workers/comment_email_worker');
@@ -81,6 +83,8 @@ const queue = require('../config/kue');
 
             let post = await  Post.findByIdAndUpdate(postId , {$pull : {comments : req.params.id}} );
 
+            await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
+            
             if (req.xhr){
                 return res.status(200).json({
                     data: {
