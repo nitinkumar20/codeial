@@ -12,6 +12,15 @@ const flash = require('connect-flash');
 
 const flashMware = require('./config/middleware');
 
+
+const chatServer = require('http').Server(app);
+
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+
+chatServer.listen(5000);
+
+console.log(`Chat server is running on port: 5000`);
+
 app.use(sassMiddleware(
     {
        src : './assets/scss' ,
